@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template:
+    "sidebar header" auto
+    "sidebar content" 1fr /
+    auto 1fr;
+}
+
+.sidebar {
+  border: 2px solid red;
+  grid-area: sidebar;
+  padding: 16px;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.header-1 {
+  display: flex;
+
+  .header-1-right {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+  }
+}
+
+.header-2 {
+  display: flex;
+
+  .header-2-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header-2-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style-type: none;
+    margin-left: auto;
+  }
+}
+
+.content-wrapper {
+  grid-area: content;
+  display: grid;
+  grid-template: 1fr 1fr / 3fr 1fr;
+
+  .projects {
+    grid-row: 1 / span 2;
+
+    .projects-cards {
+      display: grid;
+      grid-auto-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
